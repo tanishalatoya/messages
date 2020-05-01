@@ -32,7 +32,7 @@ server.on('request', (request, response) => {
     }
   
     else if (request.method === 'POST') {
-      let newMessage = { 'id': new Date() };
+      let newMessage = { 'id': Date.now() };
   
       request.on('data', (data) => {
         newMessage = Object.assign(newMessage, JSON.parse(data));
